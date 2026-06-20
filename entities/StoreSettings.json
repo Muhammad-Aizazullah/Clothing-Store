@@ -1,0 +1,22 @@
+{
+  "name": "StoreSettings",
+  "type": "object",
+  "properties": {
+    "free_delivery_enabled": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether free delivery is offered"
+    },
+    "free_delivery_minimum": {
+      "type": "number",
+      "default": 5000,
+      "description": "Minimum order amount in PKR for free delivery"
+    },
+    "whatsapp_number": {
+      "type": "string",
+      "default": "923001234567",
+      "description": "WhatsApp number with country code, no + or spaces"
+    }
+  },
+  "required": []
+}

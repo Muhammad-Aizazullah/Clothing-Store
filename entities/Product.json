@@ -1,0 +1,99 @@
+{
+  "name": "Product",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Product name"
+    },
+    "description": {
+      "type": "string",
+      "description": "Product description"
+    },
+    "price": {
+      "type": "number",
+      "description": "Original price in PKR"
+    },
+    "discount_enabled": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether discount is active"
+    },
+    "discount_percent": {
+      "type": "number",
+      "default": 0,
+      "description": "Discount percentage 0-100"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Shirts",
+        "Pants",
+        "Trousers",
+        "Jackets",
+        "Sweaters",
+        "Polos",
+        "T-Shirts"
+      ],
+      "description": "Product category"
+    },
+    "sizing_type": {
+      "type": "string",
+      "enum": [
+        "waist",
+        "letter"
+      ],
+      "description": "waist for pants (30,32,34,36), letter for shirts/jackets (S,M,L,XL)"
+    },
+    "variants": {
+      "type": "array",
+      "description": "Color variants with images and size quantities",
+      "items": {
+        "type": "object",
+        "properties": {
+          "color": {
+            "type": "string"
+          },
+          "color_hex": {
+            "type": "string"
+          },
+          "image_url": {
+            "type": "string"
+          },
+          "sizes": {
+            "type": "object",
+            "description": "Size to quantity mapping e.g. {S: 5, M: 10}"
+          }
+        }
+      }
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false,
+      "description": "Show on homepage"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "draft"
+      ],
+      "default": "active"
+    },
+    "average_rating": {
+      "type": "number",
+      "default": 0
+    },
+    "review_count": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "name",
+    "price",
+    "category",
+    "sizing_type",
+    "variants"
+  ]
+}
